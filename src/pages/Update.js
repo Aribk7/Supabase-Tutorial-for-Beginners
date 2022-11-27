@@ -20,7 +20,7 @@ const Update = () => {
     }
 
     const { data, error } = await supabase
-      .from('recipes')
+      .from('smoothies')
       .update({ title, method, rating })
       .eq('id', id)
 
@@ -36,7 +36,7 @@ const Update = () => {
   useEffect(() => {
     const fetchSmoothie = async () => {
       const { data, error } = await supabase
-        .from('recipes')
+        .from('smoothies')
         .select()
         .eq('id', id)
         .single()

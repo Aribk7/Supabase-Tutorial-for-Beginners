@@ -19,7 +19,7 @@ const Create = () => {
     }
 
     const { data, error } = await supabase
-      .from('recipes')
+      .from('smoothies')
       .insert([{ title, method, rating }])
 
     if (error) {
@@ -44,7 +44,7 @@ const Create = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <label htmlFor="method">Method:</label>
+        <label htmlFor="method">Bio:</label>
         <textarea 
           id="method"
           value={method}
@@ -59,7 +59,7 @@ const Create = () => {
           onChange={(e) => setRating(e.target.value)}
         />
 
-        <button>Create Smoothie Recipe</button>
+        <button>Create Recommendation</button>
 
         {formError && <p className="error">{formError}</p>}
       </form>
